@@ -2,8 +2,7 @@ package sdig.ftds.iosp;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -74,6 +73,12 @@ public class FerretTool extends Tool {
         log.debug("Running the FerretTool.");
         HashMap<String, String> envMap = ferretConfig.getEnvironmentAsStrings();
         log.debug("got enviroment.");
+        for(Iterator<String> it = envMap.keySet().iterator(); it.hasNext(); ) {
+            String k = it.next();
+            String e = envMap.get(k);
+            log.debug("key=" + k);
+            log.debug("value=", e);
+        }
         RuntimeEnvironment runTimeEnv = new RuntimeEnvironment();
         log.debug("Constructed new runTimeEnv.");
         runTimeEnv.setParameters(envMap);

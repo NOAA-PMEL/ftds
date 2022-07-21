@@ -77,7 +77,7 @@ public class FerretTool extends Tool {
             String k = it.next();
             String e = envMap.get(k);
             log.debug("key=" + k);
-            log.debug("value=", e);
+            log.debug("value=" + e);
         }
         RuntimeEnvironment runTimeEnv = new RuntimeEnvironment();
         log.debug("Constructed new runTimeEnv.");

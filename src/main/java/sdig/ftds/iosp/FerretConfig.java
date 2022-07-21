@@ -60,7 +60,7 @@ public class FerretConfig {
             List<String> values = map.get(key);
             String var_value = values.get(0);
             for (int i = 1; i < values.size(); i++) {
-                var_value = var_value + ":" + values.get(i);
+                var_value = var_value + " " + values.get(i);
             }
             env.put(key, var_value);
         }

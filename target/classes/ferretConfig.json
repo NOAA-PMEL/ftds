@@ -1,0 +1,73 @@
+{
+  "timeLimit": 3600,
+  "python": "/usr/bin/python",
+  "args": [
+    "-cimport sys; import pyferret; (errval, errmsg) = pyferret.init(sys.argv[1:], True)",
+    "-nodisplay",
+    "-server",
+    "-script"
+  ],
+  "environment": {
+    "FER_DIR": [
+      ".",
+      "/home/users/tmap/ferret/x86_64-linux"
+    ],
+    "FER_DESCR": [
+      ".",
+      "/home/users/tmap/descr",
+      "/home/users/tmap/ferret/linux/fer_dsets/descr",
+      "des"
+    ],
+    "FER_DATA": [
+      ".",
+      "./data",
+      "/home/users/tmap/ferret/linux/fer_dsets/data",
+      "/home/users/tmap/ferret/x86_64-linux/examples",
+      "/home/users/tmap/ferret/x86_64-linux/go"
+    ],
+    "FER_GRIDS": [
+      ".",
+      "/home/users/tmap/ferret/linux/fer_dsets/grids",
+      "/home/users/tmap/grids"
+    ],
+    "FER_PALETTE": [
+      ".",
+      "/home/users/tmap/ferret/x86_64-linux/ppl",
+      "jnls",
+      "jnls/insitu",
+      "jnls/section",
+      "scripts"
+    ],
+    "FER_GO": [
+      ".",
+      "/home/users/rhs/scripts",
+      "/home/users/tmap/ferret/tmap_go",
+      "/home/users/tmap/ferret/x86_64-linux/contrib",
+      "/home/users/tmap/ferret/x86_64-linux/examples",
+      "/home/users/tmap/ferret/x86_64-linux/go",
+      "jnls",
+      "jnls/insitu",
+      "jnls/section",
+      "scripts"
+    ],
+    "FER_FONTS": [
+      "/home/users/tmap/ferret/x86_64-linux/ppl/fonts"
+    ],
+    "PLOTFONTS": [
+      "/home/users/tmap/ferret/x86_64-linux/ppl/fonts"
+    ],
+    "FER_EXTERNAL_FUNCTIONS": [
+      ".",
+      "/home/users/tmap/ferret/x86_64-linux/ext_func/libs"
+    ],
+    "DODS_CONF": [
+      "/home/users/rhs/tomcat4/content/las/conf/server/dods/.dodsrc"
+    ],
+    "LD_LIBRARY_PATH": [
+      "/home/users/tmap/ferret/x86_64-linux/lib//usr/bin/python/site-packages/pyferret:/home/users/tmap/ferret/x86_64-linux/lib/python2.6/site-packages/pyferret"
+    ],
+    "PYTHONPATH": [
+      "/home/users/tmap/ferret/x86_64-linux/lib//usr/bin/python/site-packages:/home/users/tmap/ferret/x86_64-linux/lib/python2.6/site-packages"
+    ]
+  }
+}

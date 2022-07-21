@@ -1,0 +1,3 @@
+#
+use "coads_climatolog"
+let sst_avg = sst[d=1, t@avg]

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: edu.wisc.ssec:visad-mcidas-slim-ucar-ns:20200507-2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/edu/wisc/ssec/visad-mcidas-slim-ucar-ns/20200507-2/visad-mcidas-slim-ucar-ns-20200507-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/edu/wisc/ssec/visad-mcidas-slim-ucar-ns/20200507-2/visad-mcidas-slim-ucar-ns-20200507-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/edu/wisc/ssec/visad-mcidas-slim-ucar-ns/20200507-2/visad-mcidas-slim-ucar-ns-20200507-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

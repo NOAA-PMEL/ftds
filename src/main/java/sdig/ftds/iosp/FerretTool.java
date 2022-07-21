@@ -57,6 +57,8 @@ public class FerretTool extends Tool {
 
         ferretConfig = mapper.readValue(configFile, FerretConfig.class);
 
+        ferretConfig.addScriptDir(scriptDir);
+
         log.debug("config file parsed.");
 
     }

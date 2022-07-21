@@ -33,6 +33,11 @@ public class FerretConfig {
         return environment;
     }
 
+    public void addScriptDir(String scriptDir) {
+        List<String> fgo = getEnvironment().get("FER_GO");
+        fgo.add(scriptDir);
+    }
+
     public void setEnvironment(HashMap<String, List<String>> environment) {
         this.environment = environment;
     }

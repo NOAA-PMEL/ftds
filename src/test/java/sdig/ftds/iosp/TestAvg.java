@@ -12,7 +12,7 @@ public class TestAvg {
     @Test
     void testAvg() throws ClassNotFoundException, IllegalAccessException, InstantiationException, IOException {
         NetcdfFiles.registerIOProvider("sdig.ftds.iosp.FerretIOServiceProvider");
-        NetcdfFile my_file = NetcdfFiles.open("C:\\Users\\schweitzer\\Documents\\IdeaProjects\\ftds\\src\\test\\java\\sdig\\ftds\\iosp\\coads_avg.jnl", null);
+        NetcdfFile my_file = NetcdfFiles.open("src/test/java/sdig/ftds/iosp/coads_avg.jnl", null);
         List<Variable> v = my_file.getVariables();
         String test_name = "";
         for (int i = 0; i < v.size(); i++) {

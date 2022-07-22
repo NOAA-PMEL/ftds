@@ -44,7 +44,7 @@ public class TestAvg {
         ranges.add(r2);
         Array a = avg.read(ranges);
         // incorrect assertions until we can get the correct values
-        assertEquals(a.getFloat(0), 28.4456310);
+        assertEquals(a.getFloat(0), 28.4456310, .01);
         assertEquals(a.getDouble(19), 2.0d);
         System.out.println(a.getDouble(0));
         System.out.println(a.getDouble(19));

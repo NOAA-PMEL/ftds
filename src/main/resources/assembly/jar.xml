@@ -2,7 +2,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.1 http://maven.apache.org/xsd/assembly-2.1.1.xsd">
   <!-- TODO: a jarjar format would be better -->
-  <id>light-jar</id>
+  <id>light</id>
   <formats>
     <format>jar</format>
   </formats>
@@ -13,16 +13,20 @@
       <useProjectArtifact>true</useProjectArtifact>
       <unpack>true</unpack>
       <scope>runtime</scope>
-      <excludes>
-        <exclude>edu.ucar:cdm-core</exclude>
-        <exclude>org.slf4j:slf4j-api</exclude>
-        <exclude>ch.qos.logback:logback-classic</exclude>
-        <exclude>edu.ucar:cdm-image</exclude>
-        <exclude>edu.ucar:netcdf4</exclude>
-        <exclude>edu.ucar:opendap</exclude>
-        <exclude>edu.ucar:cdm-mcidas</exclude>
-        <exclude>org.owasp.encoder:encoder</exclude>
-      </excludes>
+<!--      <excludes>-->
+<!--        <exclude>edu.ucar:cdm-core</exclude>-->
+<!--        <exclude>org.slf4j:slf4j-api</exclude>-->
+<!--        <exclude>ch.qos.logback:logback-classic</exclude>-->
+<!--        <exclude>edu.ucar:cdm-image</exclude>-->
+<!--        <exclude>edu.ucar:netcdf4</exclude>-->
+<!--        <exclude>edu.ucar:opendap</exclude>-->
+<!--        <exclude>edu.ucar:cdm-mcidas</exclude>-->
+<!--        <exclude>org.owasp.encoder:encoder</exclude>-->
+<!--      </excludes>-->
+      <includes>
+        <include>sdig:ftds</include>
+        <include>com.fasterxml.jackson.core:jackson-databind</include>
+      </includes>
     </dependencySet>
   </dependencySets>
 </assembly>

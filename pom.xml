@@ -6,7 +6,7 @@
 
     <!-- Output to jar format -->
     <packaging>jar</packaging>
-    <groupId>groupId</groupId>
+    <groupId>sdig</groupId>
     <artifactId>ftds</artifactId>
     <version>1.0-SNAPSHOT</version>
 

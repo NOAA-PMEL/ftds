@@ -120,11 +120,9 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.4.1</version>
                 <configuration>
-                    <descriptorRefs>
-                        <descriptors>
-                            <descriptor>src/main/java/resources/assembly/jar.xml</descriptor>
-                        </descriptors>
-                    </descriptorRefs>
+                    <descriptors>
+                        <descriptor>src/main/resources/assembly/jar.xml</descriptor>
+                    </descriptors>
                 </configuration>
             </plugin>
         </plugins>

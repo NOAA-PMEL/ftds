@@ -141,7 +141,11 @@ public class FerretIOServiceProvider extends AbstractIOServiceProvider {
         jnl = inJnl.toString();
 
         String cacheKey = JDOM2Utils.MD5Encode(jnl);
-        String filename = tool.getTempDir() + cacheKey + File.separator
+        String tDir = tool.getTempDir();
+        if ( !tDir.endsWith(File.separator) ) {
+            tDir = tDir + File.separator;
+        }
+        String filename = tDir + cacheKey + File.separator
                 + "data_" + varname + "_" + sectionToString(section) + ".nc";
         String temp_filename = filename + ".tmp";
         // Simplest form of caching is that the exact file we need already
@@ -622,7 +626,11 @@ public class FerretIOServiceProvider extends AbstractIOServiceProvider {
         jnl = inJnl.toString();
 
         String cacheKey = JDOM2Utils.MD5Encode(jnl);
-        String filename = tool.getTempDir() + cacheKey + File.separator
+        String tDir = tool.getTempDir();
+        if ( !tDir.endsWith(File.separator) ) {
+            tDir = tDir + File.separator;
+        }
+        String filename = tDir + cacheKey + File.separator
                 + "data_" + varname + "_" + sectionToString(cer.section) + ".nc";
         String temp_filename = filename + ".tmp";
         // Simplest form of caching is that the exact file we need already

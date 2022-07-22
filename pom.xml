@@ -105,7 +105,6 @@
 
     </dependencies>
     <build>
-        <finalName>maven-unit-test</finalName>
         <plugins>
 
             <plugin>

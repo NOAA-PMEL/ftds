@@ -1,0 +1,31 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.1 http://maven.apache.org/xsd/assembly-2.1.1.xsd">
+  <!-- TODO: a jarjar format would be better -->
+  <id>light-jar</id>
+  <formats>
+    <format>jar</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <useProjectArtifact>true</useProjectArtifact>
+      <unpack>true</unpack>
+      <scope>runtime</scope>
+      <excludes>
+        <exclude>edu.ucar:cdm-core</exclude>
+        <exclude>org.slf4j:slf4j-api</exclude>
+        <exclude>ch.qos.logback:logback-classic</exclude>
+        <exclude>edu.ucar:cdm-image</exclude>
+        <exclude>edu.ucar:netcdf4</exclude>
+        <exclude>edu.ucar:opendap</exclude>
+        <exclude>edu.ucar:cdm-mcidas</exclude>
+        <exclude>org.owasp.encoder:encoder</exclude>
+      </excludes>
+    </dependencySet>
+  </dependencySets>
+</assembly>
+
+
+

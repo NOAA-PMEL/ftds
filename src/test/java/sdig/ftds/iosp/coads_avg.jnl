@@ -1,3 +1,5 @@
-#
-use "coads_climatolog"
-let sst_avg = sst[d=1, t@avg]
+DEFINE ALIAS letdeq1 let/d=1
+DEFINE ALIAS ATTRCMD SET ATT/LIKE=
+use "coads_climatology"
+letdeq1 sst_avg=sst[d=1,t=15-Jan:15-Mar@Average]
+ATTRCMD sst sst_avg

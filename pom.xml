@@ -121,7 +121,9 @@
                 <version>3.4.1</version>
                 <configuration>
                     <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                        <descriptors>
+                            <descriptor>src/main/java/resources/assembly/jar.xml</descriptor>
+                        </descriptors>
                     </descriptorRefs>
                 </configuration>
             </plugin>

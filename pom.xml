@@ -122,6 +122,12 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
+                    <artifactSet>
+                    <includes>
+                        <include>sdig:ftds</include>
+                        <include>com.fasterxml.jackson.core:jackson-databind</include>
+                    </includes>
+                    </artifactSet>
                     <relocations>
                         <relocation>
                             <pattern>com.fasterxml.jackson.databind</pattern>

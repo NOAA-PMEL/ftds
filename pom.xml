@@ -128,12 +128,22 @@
                         <include>com.fasterxml.jackson.core:jackson-databind</include>
                         <include>com.fasterxml.jackson.core:jackson-annotations</include>
                         <include>com.fasterxml.jackson.core:jackson-core</include>
+                        <include>ch.qos.logback:logback-classic</include>
+                        <include>org.owasp.encoder:encoder</include>
                     </includes>
                     </artifactSet>
                     <relocations>
                         <relocation>
                             <pattern>com.fasterxml.jackson</pattern>
                             <shadedPattern>com.shaded.jackson</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>ch.qos.logback</pattern>
+                            <shadedPattern>ch.qos.shaded.logback</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.owasp</pattern>
+                            <shadedPattern>org.owasp.shaded</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

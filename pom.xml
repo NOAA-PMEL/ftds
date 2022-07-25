@@ -126,12 +126,13 @@
                     <includes>
                         <include>sdig:ftds</include>
                         <include>com.fasterxml.jackson.core:jackson-databind</include>
+                        <include>com.fasterxml.jackson.core:jackson-annotations</include>
                     </includes>
                     </artifactSet>
                     <relocations>
                         <relocation>
-                            <pattern>com.fasterxml.jackson.databind</pattern>
-                            <shadedPattern>com.shaded.jackson.databind</shadedPattern>
+                            <pattern>com.fasterxml.jackson</pattern>
+                            <shadedPattern>com.shaded.jackson</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

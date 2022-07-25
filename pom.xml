@@ -127,6 +127,7 @@
                         <include>sdig:ftds</include>
                         <include>com.fasterxml.jackson.core:jackson-databind</include>
                         <include>com.fasterxml.jackson.core:jackson-annotations</include>
+                        <include>com.fasterxml.jackson.core:jackson-core</include>
                     </includes>
                     </artifactSet>
                     <relocations>

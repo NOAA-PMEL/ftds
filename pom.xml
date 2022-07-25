@@ -115,15 +115,28 @@
                     <argLine>-Dftds.content.dir=src/main/java/resources/</argLine>
                 </configuration>
             </plugin>
+            <!-- Removed assembly plugin and switched to shade since it will allow me to
+            hide the jackson classes from THREDDS. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.4.1</version>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.3.0</version>
                 <configuration>
-                    <descriptors>
-                        <descriptor>src/main/resources/assembly/jar.xml</descriptor>
-                    </descriptors>
+                    <relocations>
+                        <relocation>
+                            <pattern>com.fasterxml.jackson.databind</pattern>
+                            <shadedPattern>com.shaded.jackson.databind</shadedPattern>
+                        </relocation>
+                    </relocations>
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

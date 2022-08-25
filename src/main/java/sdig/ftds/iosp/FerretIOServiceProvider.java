@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ucar.ma2.*;
 import ucar.nc2.*;
-import ucar.nc2.dataset.NetcdfDataset;
+import ucar.nc2.dataset.*;
 import ucar.nc2.iosp.AbstractIOServiceProvider;
 import ucar.nc2.util.CancelTask;
 import ucar.unidata.io.RandomAccessFile;
@@ -246,7 +246,7 @@ public class FerretIOServiceProvider extends AbstractIOServiceProvider {
         log.debug("Attempting to open data file: " + filename);
         NetcdfFile nds = null;
         try {
-            nds = NetcdfDataset.open(filename, null);
+            nds = NetcdfDatasets.openDataset(filename);
             log.debug("Attempting to find variable : " + readname);
             Variable v = nds.findVariable(readname);
             if (readname.equals("COORDS")) {
@@ -732,7 +732,7 @@ public class FerretIOServiceProvider extends AbstractIOServiceProvider {
         log.debug("Attempting to open data file: " + filename);
         NetcdfFile nds = null;
         try {
-            nds = NetcdfDataset.open(filename, null);
+            nds = NetcdfDatasets.openDataset(filename);
             log.debug("Attempting to find variable : " + readname);
             Variable v = nds.findVariable(readname);
             if (readname.equals("COORDS")) {

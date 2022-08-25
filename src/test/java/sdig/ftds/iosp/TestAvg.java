@@ -43,7 +43,6 @@ public class TestAvg {
         ranges.add(r1);
         ranges.add(r2);
         Array a = avg.read(ranges);
-        // incorrect assertions until we can get the correct values
         assertEquals(a.getFloat(0), 28.4456310, .01);
         assertEquals(a.getFloat(19), 28.2434501, .01);
     }

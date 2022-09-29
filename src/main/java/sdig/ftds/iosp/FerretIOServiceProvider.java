@@ -300,6 +300,7 @@ public class FerretIOServiceProvider extends AbstractIOServiceProvider {
             throws IOException {
 
         this.raf = raf;
+        this.location = raf.getLocation();
         FerretTool tool;
         try {
             tool = new FerretTool();
@@ -443,7 +444,11 @@ public class FerretIOServiceProvider extends AbstractIOServiceProvider {
                 String length = ferretAttributes.get("length").getValue();
                 String name = dimensionE.getAttributeValue("name").trim();
                 if ( length != null ) {
-                    Dimension dim = new Dimension(name, Integer.parseInt(length), true);
+                    Dimension dim = Dimension.builder().
+                            setName(name).
+                            setLength(Integer.parseInt(length)).
+                            setIsShared(true).
+                            build();
                     allDims.add(dim);
                     rootGroup.addDimension(dim);
                 }

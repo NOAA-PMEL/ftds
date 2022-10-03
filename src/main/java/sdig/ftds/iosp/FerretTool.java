@@ -39,7 +39,7 @@ public class FerretTool extends Tool {
         }
         scriptDir = configFilePath + "scripts";
         tempDir = configFilePath + "temp";
-        dataDir = configFilePath + "data";
+        dataDir = configFilePath + "data" + File.pathSeparator + "dynamic";
 
         File scriptDirFile = new File(scriptDir);
         if (!scriptDirFile.exists()) {

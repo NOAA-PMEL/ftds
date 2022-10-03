@@ -39,6 +39,7 @@ public class FerretTool extends Tool {
         }
         scriptDir = configFilePath + "scripts";
         tempDir = configFilePath + "tmp";
+        dataDir = configFilePath + "data";
 
         File scriptDirFile = new File(scriptDir);
         if (!scriptDirFile.exists()) {
@@ -50,6 +51,14 @@ public class FerretTool extends Tool {
             boolean temp = tempDirFile.mkdirs();
             if ( !temp ) {
                 throw new IOSPException("Could not create the temp directory in " + tempDir);
+            }
+        }
+
+        File dataDirFile = new File(dataDir);
+        if ( !dataDirFile.exists() ) {
+            boolean data = dataDirFile.mkdirs();
+            if ( !data ) {
+                throw new IOSPException("Could not create the data directory in " + dataDir);
             }
         }
 

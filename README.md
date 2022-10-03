@@ -18,6 +18,16 @@ The ISOP can be plugged into a TDS and virtual variables can be defined by
 configuring the .jnl Ferret script files as data sets in the TDS 
 configuration catalogs.
 
+Test with:
+
+mvn test
+
+Build with:
+
+mvn package
+
+which will result in a "shaded" jar suitable for use with TDS.
+
 #### Installation Instructions
  ... to follow after implementation is complete
 

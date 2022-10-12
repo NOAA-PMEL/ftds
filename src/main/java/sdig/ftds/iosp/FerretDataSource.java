@@ -2,23 +2,16 @@ package sdig.ftds.iosp;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import thredds.servlet.DatasetSource;
 import ucar.nc2.NetcdfFile;
+import ucar.nc2.dataset.NetcdfDatasets;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.io.*;
 import java.net.URLDecoder;
-import java.io.UnsupportedEncodingException;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.FileOutputStream;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import ucar.unidata.io.RandomAccessFile;
-public class FerretDataSource implements DatasetSource {
+public class FerretDataSource implements thredds.servlet.DatasetSource  {
     private final static Logger log = LoggerFactory.getLogger(FerretDataSource.class.getName());
 
     @Override
@@ -158,8 +151,8 @@ public class FerretDataSource implements DatasetSource {
             data_script.close();
         }
 
-        RandomAccessFile raf = new RandomAccessFile(script, "r");
-        return new FerretNetcdfFile(raf, req.getRequestURI());
+        NetcdfFile ncfile = NetcdfDatasets.openFile(script, null);
+        return ncfile;
     }
     /**
      * Return the portion of the URL that comes before the expression (_expr_).

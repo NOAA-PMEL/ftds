@@ -12,7 +12,7 @@ public class MakeConfig {
         HashMap<String, List<String>> environment = new HashMap<>();
         environment.put("FER_DIR", Arrays.asList("/joe", "/fro"));
         environment.put("FER_DATA", Arrays.asList("/bill", "/fill"));
-        FerretConfig config = new FerretConfig();
+        FerretJSONConfig config = new FerretJSONConfig();
         config.setEnvironment(environment);
         config.setTimeLimit(19203);
         try {

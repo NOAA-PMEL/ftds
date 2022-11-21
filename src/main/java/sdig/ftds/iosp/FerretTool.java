@@ -29,7 +29,8 @@ public class FerretTool extends Tool {
         String configFilePath = System.getProperty("ftds.content.dir");
         File configFile;
         if ( configFilePath != null ) {
-            configFile = new File(configFilePath + File.separator + "ferretConfig.json");
+            configFile = new File(configFilePath + File.separator + "FerretConfig.xml");
+
         } else {
             throw new Exception("-Dftds.content.dir system property was not set.");
         }
@@ -63,7 +64,14 @@ public class FerretTool extends Tool {
         }
 
 
-        ferretConfig = mapper.readValue(configFile, FerretConfig.class);
+        ferretConfig = new FerretConfig();
+
+        try {
+            JDOM2Utils.XML2JDOM(configFile, ferretConfig);
+        } catch (Exception e) {
+            throw new Exception("Could not parse Ferret config file: " + e.toString());
+        }
+
 
         ferretConfig.addScriptDir(scriptDir);
 
@@ -80,7 +88,7 @@ public class FerretTool extends Tool {
      */
     public void run (String driver, String jnl, String cacheKey, String temporary_filename, String output_filename) throws Exception {
         log.debug("Running the FerretTool.");
-        HashMap<String, String> envMap = ferretConfig.getEnvironmentAsStrings();
+        HashMap<String, String> envMap = ferretConfig.getEnvironment();
         log.debug("got enviroment.");
         for(Iterator<String> it = envMap.keySet().iterator(); it.hasNext(); ) {
             String k = it.next();

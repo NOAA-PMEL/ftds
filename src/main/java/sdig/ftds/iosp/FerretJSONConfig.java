@@ -6,7 +6,7 @@ import java.util.*;
  * A configuration POJO that will be read (and written) by Jackson to keep track of the configuration
  * necessary to run (Py)Ferret in service of the IOSP.
  */
-public class FerretConfig {
+public class FerretJSONConfig {
     private long timeLimit;
     private String python;
 

@@ -82,10 +82,7 @@ public class FerretConfig extends IOSPDocument {
         HashMap<String, String> env = new HashMap<String, String>();
         Element environment = this.getRootElement().getChild("environment");
         String base_dir = getIOSPBaseDir();
-        
-        if ( !base_dir.startsWith("/")) {
-            throw new IOSPException("base_dir "+base_dir+" is not a full path.");
-        }
+
         if ( environment != null ) {
             List variables = environment.getChildren("variable");
             for (Iterator varIt = variables.iterator(); varIt.hasNext();) {
@@ -96,11 +93,7 @@ public class FerretConfig extends IOSPDocument {
                 for (Iterator valueIt = values.iterator(); valueIt.hasNext();) {
                     Element valueE = (Element) valueIt.next();
                     String val = valueE.getTextTrim();
-                    if ( val.startsWith("/")) {
-                       value = value + val;
-                    } else {
-                        value = value + base_dir + val;
-                    }
+                    value = value + val;
                     if (valueIt.hasNext()) {
                         value = value + " ";
                     }
